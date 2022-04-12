@@ -31,8 +31,8 @@ delete_backward_char()
 }
 kill_line()
 {
-  Send {Shift Down}{End}{Shift Up}{Backspace}
-  Sleep 50 ;[ms] this value depends on your environment
+  Send {Shift Down}{End}{Shift Up}
+  Sleep 50
   Send ^x
   global markset = 0
   Return

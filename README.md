@@ -1,9 +1,10 @@
-## e-mackeys
+## E-mackeys
 EmacsのキーバインドとmacOSのキーバインドをWindows用に割り当てたものです。  
 HHKBでの使用を念頭に置いているため、Winキーをmacのcommandキー代わりに扱っています。  
 
 本スクリプトはAutoHotKeyで実行するかコンパイルします。  
-[AutoHotKey](https://www.autohotkey.com/)
+AutoHotkey:  
+https://www.autohotkey.com/
 
 ## 使用方法 (How to use)
 e-mackeys.exeをダブルクリックして起動  
@@ -15,4 +16,5 @@ win+rでshell:startupを指定しても上記のフォルダを開くことが�
 
 ## 補足
 CapslockとCtrlを入れ替える場合は、Microsoft公式のCtrl2Capを使用してください。  
-[Ctrl2Cap](https://docs.microsoft.com/en-us/sysinternals/downloads/ctrl2cap)
+Ctrl2Cap:
+https://docs.microsoft.com/en-us/sysinternals/downloads/ctrl2cap

@@ -152,22 +152,6 @@ backward_char()
   Return
 }
 
-^d::delete_char() Return
-^h::delete_backward_char() Return
-^k::kill_line() Return
-^g::quit() Return
-^m::newline() Return
-^r::isearch_backward() Return
-^w::kill_region() Return
-!w::kill_ring_save() Return
-^y::yank() Return
-^/::undo() Return  
-^a::move_beginning_of_line() Return
-^e::move_end_of_line() Return
-^p::previous_line() Return
-^n::next_line() Return
-^b::backward_char() Return
-
 ^@::
 If markset
   markset = 0
@@ -192,6 +176,22 @@ If ctrl_x
 Else
   forward_char()
 Return
+
+^d::delete_char() Return
+^h::delete_backward_char() Return
+^k::kill_line() Return
+^g::quit() Return
+^m::newline() Return
+^r::isearch_backward() Return
+^w::kill_region() Return
+!w::kill_ring_save() Return
+^y::yank() Return
+^/::undo() Return  
+^a::move_beginning_of_line() Return
+^e::move_end_of_line() Return
+^p::previous_line() Return
+^n::next_line() Return
+^b::backward_char() Return
 
 LWin & c::Send, ^c
 LWin & v::Send, ^v

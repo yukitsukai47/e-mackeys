@@ -16,5 +16,5 @@ win+rでshell:startupを指定しても上記のフォルダを開くことが�
 
 ## 補足
 CapslockとCtrlを入れ替える場合は、Microsoft公式のCtrl2Capを使用してください。  
-Ctrl2Cap:
+Ctrl2Cap:  
 https://docs.microsoft.com/en-us/sysinternals/downloads/ctrl2cap

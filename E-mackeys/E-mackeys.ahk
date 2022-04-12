@@ -49,13 +49,7 @@ newline()
   global markset = 0
   Return
 }
-isearch_forward()
-{
-  Send ^f
-  global markset = 0
-  Return
-}
-isearch_backward()
+isearch()
 {
   Send ^f
   global markset = 0
@@ -64,12 +58,6 @@ isearch_backward()
 kill_region()
 {
   Send ^x
-  global markset = 0
-  Return
-}
-kill_ring_save()
-{
-  Send ^c
   global markset = 0
   Return
 }
@@ -82,6 +70,12 @@ yank()
 undo()
 {
   Send ^z
+  global markset = 0
+  Return
+}
+redo()
+{
+  Send ^y
   global markset = 0
   Return
 }
@@ -151,6 +145,12 @@ backward_char()
     Send {Left}
   Return
 }
+mark_whole_buffer()
+{
+  Send, ^a
+  global ctrl_x = 0
+  Return
+}
 
 ^@::
 If markset
@@ -160,14 +160,14 @@ Else
 Return
 
 ^x::
-    ctrl_x = 1
-  Return 
+ctrl_x = 1
+Return 
 
 ^s::
 If ctrl_x
   save_buffer()
 Else
-  isearch_forward()
+  isearch()
 Return
 
 ^f::
@@ -177,16 +177,22 @@ Else
   forward_char()
 Return
 
+h::
+If ctrl_x
+  mark_whole_buffer()
+Else
+  Send h
+Return
+
 ^d::delete_char() Return
 ^h::delete_backward_char() Return
 ^k::kill_line() Return
 ^g::quit() Return
 ^m::newline() Return
-^r::isearch_backward() Return
 ^w::kill_region() Return
-!w::kill_ring_save() Return
 ^y::yank() Return
-^/::undo() Return  
+^/::undo() Return
+!/::redo() Return  
 ^a::move_beginning_of_line() Return
 ^e::move_end_of_line() Return
 ^p::previous_line() Return

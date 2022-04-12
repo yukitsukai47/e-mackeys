@@ -1,0 +1,207 @@
+#InstallKeybdHook
+#UseHook
+
+SetKeyDelay 0
+
+ctrl_x = 0
+markset = 0
+
+; Exclusion
+SetTitleMatchMode,  2
+GroupAdd, exclusion, ahk_exe emacs.exe
+GroupAdd, exclusion, ahk_exe Code.exe
+GroupAdd, exclusion, ahk_exe kali.exe
+GroupAdd, exclusion, ahk_exe ubuntu2004.exe
+GroupAdd, exclusion, ahk_exe ubuntu2204.exe
+GroupAdd, exclusion, ahk_exe WindowsTerminal.exe
+
+#IfWinNotActive ahk_group exclusion
+
+delete_char()
+{
+  Send {Del}
+  global markset = 0
+  Return
+}
+delete_backward_char()
+{
+  Send {BS}
+  global markset = 0
+  Return
+}
+kill_line()
+{
+  Send {Shift Down}{End}{Shift Up}{Backspace}
+  Sleep 50 ;[ms] this value depends on your environment
+  Send ^x
+  global markset = 0
+  Return
+}
+quit()
+{
+  Send {ESC}
+  global markset = 0
+  Return
+}
+newline()
+{
+  Send {Enter}
+  global markset = 0
+  Return
+}
+isearch_forward()
+{
+  Send ^f
+  global markset = 0
+  Return
+}
+isearch_backward()
+{
+  Send ^f
+  global markset = 0
+  Return
+}
+kill_region()
+{
+  Send ^x
+  global markset = 0
+  Return
+}
+kill_ring_save()
+{
+  Send ^c
+  global markset = 0
+  Return
+}
+yank()
+{
+  Send ^v
+  global markset = 0
+  Return
+}
+undo()
+{
+  Send ^z
+  global markset = 0
+  Return
+}
+find_file()
+{
+  Send ^o
+  global ctrl_x = 0
+  Return
+}
+save_buffer()
+{
+  Send, ^s
+  global ctrl_x = 0
+  Return
+}
+move_beginning_of_line()
+{
+  global
+  if markset
+    Send +{HOME}
+  Else
+    Send {HOME}
+  Return
+}
+move_end_of_line()
+{
+  global
+  if markset
+    Send +{END}
+  Else
+    Send {END}
+  Return
+}
+previous_line()
+{
+  global
+  if markset
+    Send +{Up}
+  Else
+    Send {Up}
+  Return
+}
+next_line()
+{
+  global
+  if markset
+    Send +{Down}
+  Else
+    Send {Down}
+  Return
+}
+forward_char()
+{
+  global
+  if markset
+    Send +{Right}
+  Else
+    Send {Right}
+  Return
+}
+backward_char()
+{
+  global
+  if markset
+    Send +{Left} 
+  Else
+    Send {Left}
+  Return
+}
+
+^d::delete_char() Return
+^h::delete_backward_char() Return
+^k::kill_line() Return
+^g::quit() Return
+^m::newline() Return
+^r::isearch_backward() Return
+^w::kill_region() Return
+!w::kill_ring_save() Return
+^y::yank() Return
+^/::undo() Return  
+^a::move_beginning_of_line() Return
+^e::move_end_of_line() Return
+^p::previous_line() Return
+^n::next_line() Return
+^b::backward_char() Return
+
+^@::
+If markset
+  markset = 0
+Else
+  markset = 1
+Return
+
+^x::
+    ctrl_x = 1
+  Return 
+
+^s::
+If ctrl_x
+  save_buffer()
+Else
+  isearch_forward()
+Return
+
+^f::
+If ctrl_x
+  find_file()
+Else
+  forward_char()
+Return
+
+LWin & c::Send, ^c
+LWin & v::Send, ^v
+LWin & s::Send, ^s
+LWin & z::Send, ^z
+LWin & f::Send, ^f
+LWin & a::Send, ^a
+LWin & w::Send, ^w
+LWin & Space::Send, #s
+LWin & /::Send, #v
+#+4::Send, #+s
+
+#IfWinNotActive ahk_group exclusion

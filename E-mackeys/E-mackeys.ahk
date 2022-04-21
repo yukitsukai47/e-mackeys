@@ -61,6 +61,12 @@ kill_region()
   global markset = 0
   Return
 }
+copy()
+{
+  Send ^c
+  global markset = 0
+  Return
+}
 yank()
 {
   Send ^v
@@ -190,6 +196,7 @@ Return
 ^g::quit() Return
 ^m::newline() Return
 ^w::kill_region() Return
+!w::copy() Return
 ^y::yank() Return
 ^/::undo() Return
 !/::redo() Return  

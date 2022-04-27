@@ -213,6 +213,7 @@ LWin & z::Send, ^z
 LWin & f::Send, ^f
 LWin & a::Send, ^a
 LWin & w::Send, ^w
+LWin & ::Send, ^p
 LWin & Space::Send, #s
 LWin & /::Send, #v
 #+4::Send, #+s

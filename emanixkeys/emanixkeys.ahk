@@ -155,7 +155,7 @@ forward_word()
 {
   global
   if markset
-    Send +{Right}
+    Send +^{Right}
   Else
     Send ^{Right}
   Return
@@ -164,7 +164,7 @@ backward_word()
 {
   global
   if markset
-    Send +{Left} 
+    Send +^{Left} 
   Else
     Send ^{Left}
   Return

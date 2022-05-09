@@ -151,6 +151,24 @@ backward_char()
     Send {Left}
   Return
 }
+forward_word()
+{
+  global
+  if markset
+    Send +{Right}
+  Else
+    Send ^{Right}
+  Return
+}
+backward_word()
+{
+  global
+  if markset
+    Send +{Left} 
+  Else
+    Send ^{Left}
+  Return
+}
 mark_whole_buffer()
 {
   Send, ^a
@@ -205,6 +223,8 @@ Return
 ^p::previous_line() Return
 ^n::next_line() Return
 ^b::backward_char() Return
+!f::forward_word() Return
+!b::backward_word() Return
 
 LWin & c::Send, ^c
 LWin & v::Send, ^v
@@ -213,9 +233,11 @@ LWin & z::Send, ^z
 LWin & f::Send, ^f
 LWin & a::Send, ^a
 LWin & w::Send, ^w
-LWin & ::Send, ^p
+LWin & p::Send, ^p
 LWin & Space::Send, #s
 LWin & /::Send, #v
-#+4::Send, #+s
+
+; macOS
+; #+4::Send, #+s
 
 #IfWinNotActive ahk_group exclusion

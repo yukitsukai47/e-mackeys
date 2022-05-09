@@ -29,6 +29,13 @@ delete_backward_char()
   global markset = 0
   Return
 }
+delete_word()
+{
+  global markset = 1
+  if markset
+      Send +^{Right}{BS}{Space}{Left}
+      global markset = 0
+}
 kill_line()
 {
   Send {Shift Down}{End}{Shift Up}
@@ -210,6 +217,7 @@ Return
 
 ^d::delete_char() Return
 ^h::delete_backward_char() Return
+!d::delete_word() Return
 ^k::kill_line() Return
 ^g::quit() Return
 ^m::newline() Return

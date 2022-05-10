@@ -33,7 +33,7 @@ delete_word()
 {
   global markset = 1
   if markset
-      Send +^{Right}{BS}{Space}{Left}
+      Send +^{Right}{BS}
       global markset = 0
 }
 kill_line()

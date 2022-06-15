@@ -244,6 +244,6 @@ LWin & w::Send, ^w
 LWin & p::Send, ^p
 LWin & Space::Send, #s
 LWin & /::Send, #v
-!+4::Send, #+s
+#+4::Send, #+s
 
 #IfWinNotActive ahk_group exclusion

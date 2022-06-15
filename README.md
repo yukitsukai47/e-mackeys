@@ -1,4 +1,4 @@
-## emanixkeys
+## emackeys
 EmacsのキーバインドとmacOSのキーバインドをWindows用に割り当てたものです。  
 UNIX配列であるHHKBでの使用を念頭に置いているため、Winキーをmacのcommandキー代わりに扱っています。  
 
@@ -7,11 +7,11 @@ AutoHotkey:
 https://www.autohotkey.com/
 
 ## 使用方法 (How to use)
-emanixkeys.exeをダブルクリックして起動  
+emackeys.exeをダブルクリックして起動  
 
 ### Windows起動時にアプリを自動起動する場合
 C:\Users\ユーザー名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup  
-にe-mackeys.exeを配置してください。  
+にemackeys.exeを配置してください。  
 win+rでshell:startupを指定しても上記のフォルダを開くことができます。  
 
 ## 補足

@@ -9,7 +9,7 @@ markset = 0
 ; Exclusion
 SetTitleMatchMode,  2
 GroupAdd, exclusion, ahk_exe emacs.exe
-GroupAdd, exclusion, ahk_exe Code.exe
+GroupAdd, exclusion, ahk_exe DeadByDaylight.exe
 GroupAdd, exclusion, ahk_exe kali.exe
 GroupAdd, exclusion, ahk_exe ubuntu2004.exe
 GroupAdd, exclusion, ahk_exe ubuntu2204.exe
@@ -244,6 +244,6 @@ LWin & w::Send, ^w
 LWin & p::Send, ^p
 LWin & Space::Send, #s
 LWin & /::Send, #v
-#+4::Send, #+s
+!+4::Send, #+s
 
 #IfWinNotActive ahk_group exclusion

@@ -122,6 +122,24 @@ move_end_of_line()
     Send {END}
   Return
 }
+move_beginning_of_sentence()
+{
+  global
+  if markset
+    Send +^{HOME}
+  Else
+    Send ^{HOME}
+  Return
+}
+move_end_of_sentence()
+{
+  global
+  if markset
+    Send +^{END}
+  Else
+    Send ^{END}
+  Return
+}
 previous_line()
 {
   global
@@ -153,7 +171,7 @@ backward_char()
 {
   global
   if markset
-    Send +{Left} 
+    Send +{Left}
   Else
     Send {Left}
   Return
@@ -228,6 +246,8 @@ Return
 !/::redo() Return  
 ^a::move_beginning_of_line() Return
 ^e::move_end_of_line() Return
+!<::move_beginning_of_sentence() Return
+!>::move_end_of_sentence() Return
 ^p::previous_line() Return
 ^n::next_line() Return
 ^b::backward_char() Return
@@ -245,5 +265,8 @@ LWin & p::Send, ^p
 LWin & Space::Send, #s
 LWin & /::Send, #v
 !^4::Send, #+s
+
+!^f::Send, !{Right}
+!^b::Send, !{Left}
 
 #IfWinNotActive ahk_group exclusion

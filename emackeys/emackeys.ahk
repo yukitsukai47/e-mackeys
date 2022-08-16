@@ -13,6 +13,7 @@ GroupAdd, exclusion, ahk_exe DeadByDaylight-Win64-Shipping.exe
 GroupAdd, exclusion, ahk_exe kali.exe
 GroupAdd, exclusion, ahk_exe ubuntu2004.exe
 GroupAdd, exclusion, ahk_exe ubuntu2204.exe
+GroupAdd, exclusion, ahk_exe code.exe
 GroupAdd, exclusion, ahk_exe WindowsTerminal.exe
 
 #IfWinNotActive ahk_group exclusion

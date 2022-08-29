@@ -255,6 +255,9 @@ Return
 !f::forward_word() Return
 !b::backward_word() Return
 
+!^f::Send, !{Right}
+!^b::Send, !{Left}
+
 LWin & c::Send, ^c
 LWin & v::Send, ^v
 LWin & s::Send, ^s
@@ -265,9 +268,5 @@ LWin & w::Send, ^w
 LWin & p::Send, ^p
 LWin & Space::Send, #s
 LWin & /::Send, #v
-!^4::Send, #+s
-
-!^f::Send, !{Right}
-!^b::Send, !{Left}
 
 #IfWinNotActive ahk_group exclusion

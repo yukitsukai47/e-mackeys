@@ -10,6 +10,7 @@ markset = 0
 SetTitleMatchMode,  2
 GroupAdd, exclusion, ahk_exe emacs.exe
 GroupAdd, exclusion, ahk_exe runemacs.exe
+GroupAdd, exclusion, ahk_exe EXCEL.EXE
 GroupAdd, exclusion, ahk_exe code.exe
 GroupAdd, exclusion, ahk_exe kali.exe
 GroupAdd, exclusion, ahk_exe ubuntu2204.exe
